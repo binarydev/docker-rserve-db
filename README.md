@@ -13,6 +13,13 @@ cd docker-rserve-mysql
 sudo docker build --tag <arbitrary-name>:3.3.1 .
 ```
 
+OR
+
+- Pull the latest image from DockerHub
+```
+sudo docker pull binarydev/docker-rserve-mysql
+```
+
 ### Step 2: 
 
 - Create a New Container With the Image
