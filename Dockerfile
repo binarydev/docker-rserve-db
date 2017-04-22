@@ -13,6 +13,7 @@ RUN apt-get install --fix-missing -y libmariadb-client-lgpl-dev
 
 RUN echo 'remote enable' >> /etc/Rserv.conf
 
+# install a few common required packages - change to your liking if necessary
 RUN R -e "install.packages(c('lme4','DoE.base','jsonlite','Rserve','dplyr','tidyr','RMySQL'))"
 
 CMD /bin/bash install_local_packages.sh && R CMD Rserve --no-save && /bin/bash
