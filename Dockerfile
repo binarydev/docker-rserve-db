@@ -9,11 +9,14 @@ RUN apt-get update
 RUN apt-get install --fix-missing -y libmariadb-client-lgpl-dev
 
 # Define a default CRAN repo
-#RUN echo 'options(repos = c(CRAN = "https://cran.rstudio.com/"), download.file.method = "libcurl")' >> /etc/R/Rprofile.site
+RUN echo 'options(repos = c(CRAN = "https://cloud.r-project.org/"), download.file.method = "libcurl")' >> /etc/R/Rprofile.site
 
 RUN echo 'remote enable' >> /etc/Rserv.conf
+# RUN echo "local({r <- getOption("repos")
+#       r["CRAN"] <- "https://cloud.r-project.org/"
+#       options(repos=r)})" >> /root/.Rprofile
 
-# install a few common required packages - change to your liking if necessary
+# install a few of my common required packages
 RUN R -e "install.packages(c('lme4','DoE.base','jsonlite','Rserve','dplyr','tidyr','RMySQL'))"
 
 CMD /bin/bash install_local_packages.sh && R CMD Rserve --no-save && /bin/bash
