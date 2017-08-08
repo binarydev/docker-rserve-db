@@ -1,6 +1,6 @@
 # Description
 
-Includes a Dockerfile for running a self-container Rserve instance on the default 6311 port, with dependencies for vectorized processing and MySQL client installed. A default Rprofile file defining the cloud CRAN mirror is created as well.
+Includes a Dockerfile for running a self-container Rserve instance on the default 6311 port, with dependencies for vectorized processing and MySQL/PostgreSQL client installed. A default Rprofile file defining the cloud CRAN mirror is created as well.
 
 # Installation with Docker
 
@@ -8,8 +8,8 @@ Includes a Dockerfile for running a self-container Rserve instance on the defaul
 
 - Clone this repo and create a new image with an arbitrary name
 ```
-git clone https://github.com/binarydev/docker-rserve-mysql.git
-cd docker-rserve-mysql
+git clone https://github.com/binarydev/docker-rserve-db.git
+cd docker-rserve-db
 sudo docker build --tag <arbitrary-name>:3.3.1 .
 ```
 
@@ -17,7 +17,7 @@ OR
 
 - Pull the latest image from DockerHub
 ```
-sudo docker pull binarydev/docker-rserve-mysql
+sudo docker pull binarydev/docker-rserve-db
 ```
 
 ### Step 2: 
