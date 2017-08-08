@@ -6,7 +6,7 @@ RUN chmod a+x install_local_packages.sh
 
 RUN apt-get update
 
-RUN apt-get install --fix-missing -y libmariadb-client-lgpl-dev
+RUN apt-get install --fix-missing -y libmariadb-client-lgpl-dev libpq-dev
 
 # Define a default CRAN repo
 RUN echo 'options(repos = c(CRAN = "https://cloud.r-project.org/"), download.file.method = "libcurl")' >> /etc/R/Rprofile.site
