@@ -17,6 +17,6 @@ RUN echo 'remote enable' >> /etc/Rserv.conf
 #       options(repos=r)})" >> /root/.Rprofile
 
 # install a few of my common required packages
-RUN R -e "install.packages(c('lme4','DoE.base','jsonlite','Rserve','dplyr','tidyr','RMySQL','RPostgreSQL','reshape2','stringdist'))"
+RUN R -e "install.packages(c('lme4','DoE.base','jsonlite','Rserve','dplyr','tidyr','RMySQL','RPostgreSQL','reshape2','stringdist','doParallel','foreach'))"
 
 CMD /bin/bash install_local_packages.sh && R CMD Rserve --no-save && /bin/bash
